@@ -1,0 +1,14 @@
+# 1. Thư viện xử lý dữ liệu
+pandas
+numpy
+
+# 2. Thư viện kết nối Database
+sqlalchemy
+pymysql
+
+# 3. Thư viện đọc/ghi Excel (Để xử lý file dữ liệu thô)
+openpyxl
+xlsxwriter
+
+# 4. Thư viện lấy dữ liệu chứng khoán (Dành cho cách lấy giá tự động)
+vnstock
