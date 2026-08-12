@@ -2,5 +2,9 @@ etl/db_config.py
 __pycache__/
 *.pyc
 .env
+data/firms.xlsx
+data/panel_2020_2024.xlsx
+data/team_tickers.csv
+data/Firm_Data_Hub_PowerBI_Ready.xlsx
 outputs/*.csv
-desktop.ini
+outputs/*.xlsx
