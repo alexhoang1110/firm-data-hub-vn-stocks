@@ -1,7 +1,5 @@
 ## Project Overview
 
-Google Drive link: [TEAM_6_FirmDataHub](https://drive.google.com/drive/folders/1tv8wNJu_SFggVtnuHedk_ROxYOi4Siuq?usp=drive_link)
-
 Firm Data Hub is a centralized data warehouse system designed to store, perform quality control (QC), manage versions (snapshots), and export panel data for 20 listed companies in Vietnam over a 5-year period (2020-2024)
 
 This project is the Midterm Project for the SQL course, demonstrating a complete Data Engineering pipeline from raw data extraction to a structured `DIM + FACT + SNAPSHOT` relational database on MySQL
