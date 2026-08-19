@@ -35,7 +35,7 @@ The database is hosted on Aiven Cloud (MySQL) and strictly follows the required 
 To reproduce this pipeline, ensure you have the following installed:
 - Python 3.9+
 - MySQL Server (or an active Aiven Cloud connection)
-- Required Python libraries: See in Python file `requirements.py`
+- Required Python libraries: See in Python file `etl/requirements.txt`
 
 *Note: Configure your database connection in `db_config.py` (DB_USER, DB_PASS, DB_HOST) before running the scripts.*
 
@@ -83,6 +83,14 @@ Extracts the latest snapshot for each firm-year through the `vw_firm_panel_lates
 python etl/export_panel.py
 ```
 
+## Power BI Dashboard
+
+A multi-page Power BI dashboard was built on top of the `vw_firm_panel` view, 
+featuring 7 derived KPIs for visualizing firm-level financial and market trends.
+
+![Dashboard Overview](powerbi/dashboard_overview.png)
+![KPI Page](powerbi/kpi_page.png)
+
 ## Directory Structure
 
 ```Plaintext
@@ -97,7 +105,8 @@ TEAM_6_FirmDataHub/
 │   ├── create_snapshot.py     # Script B
 │   ├── import_panel.py        # Script C
 │   ├── qc_checks.py           # Data validation script
-│   └── export_panel.py        # Final export script
+│   ├── export_panel.py        # Final export script
+│   └── rrequirements.txt
 ├── outputs/
 │   ├── qc_report.csv          # Generated QC error log
 │   └── panel_latest.csv       # Final output dataset
