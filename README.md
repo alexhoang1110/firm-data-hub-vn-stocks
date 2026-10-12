@@ -6,12 +6,12 @@ This project is the Midterm Project for the SQL course, demonstrating a complete
 
 ## Team Members & Contribution
 
-| Team Member           | Student ID | Role            | Main Responsibilities & Tasks Completed                                                                                                  | Contribution (%) |
-| --------------------- | ---------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| **Hoang Linh Phuong** | 11245925   | Team Leader<br> | - Built the complete Python ETL pipeline (Import, QC, Snapshot, Export).<br>- Co-designed the database schema and system configurations. | 25.6             |
-| **Duong Hong Anh**    | 11245842   | Team Member     | - Co-designed the database schema.<br>- Developed SQL master views and validation queries for data auditing.                             | 25.6             |
-| **Le Thuy Duong**     | 11245864   | Team Member     | - Conducted data sourcing and managed manual data entry for the panel dataset.<br>- Performed data collection dry runs.                  | 25.6             |
-| **Ngo Thi Tuyet Mai** | 1245903    | Team Member     | - Standardized raw financial data from various sources.<br>- Executed manual data entry for the 2020-2024 panel dataset.                 | 23               |
+| Team Member			| Role            | Main Responsibilities & Tasks Completed                                                                                                  | Contribution (%) |
+| --------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| **Hoang Linh Phuong** | Team Leader<br> | - Built the complete Python ETL pipeline (Import, QC, Snapshot, Export).<br>- Co-designed the database schema and system configurations. | 25.6             |
+| **Duong Hong Anh** | Team Member     | - Co-designed the database schema.<br>- Developed SQL master views and validation queries for data auditing.                             | 25.6             |
+| **Le Thuy Duong** | Team Member     | - Conducted data sourcing and managed manual data entry for the panel dataset.<br>- Performed data collection dry runs.                  | 25.6             |
+| **Ngo Thi Tuyet Mai**| Team Member     | - Standardized raw financial data from various sources.<br>- Executed manual data entry for the 2020-2024 panel dataset.                 | 23.2               |
 ## Data Scope & Sources
 
 - **Tickers:** 20 assigned stock tickers (including SAB, PTC, TRA, etc.)
@@ -28,7 +28,7 @@ The database is hosted on Aiven Cloud (MySQL) and strictly follows the required 
 - **Dimensions (DIM):** `dim_firm`, `dim_exchange`, `dim_industry_12`, `dim_data_source`.
 - **Snapshot:** `fact_data_snapshot` (for version control).
 - **Facts:** `fact_ownership_year`, `fact_financial_year`, `fact_cashflow_year`, `fact_market_year`, `fact_innovation_year`, `fact_firm_year_meta`.
-- **Views:** `vw_firm_panel` (Generates the final clean dataset).
+- **Views:** `vw_firm_panel_latest` (Generates the final clean dataset).
 
 ## Prerequisites
 
@@ -83,14 +83,6 @@ Extracts the latest snapshot for each firm-year through the `vw_firm_panel_lates
 python etl/export_panel.py
 ```
 
-## Power BI Dashboard
-
-A multi-page Power BI dashboard was built on top of the `vw_firm_panel` view, 
-featuring 7 derived KPIs for visualizing firm-level financial and market trends.
-
-![Dashboard Overview](powerbi/dashboard_overview.png)
-![KPI Page](powerbi/kpi_page.png)
-
 ## Directory Structure
 
 ```Plaintext
@@ -111,6 +103,6 @@ TEAM_6_FirmDataHub/
 │   ├── qc_report.csv          # Generated QC error log
 │   └── panel_latest.csv       # Final output dataset
 ├── sql/
-│   └── schema_and_seed.sql    # DDL constraints and views
+│   └── vn_firm_panel.sql      # DDL constraints and views
 └── README.md                  # This documentation
 ```
